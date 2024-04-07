@@ -38,7 +38,7 @@ LLM `sonar-medium-online` is selected by default. Set the second argument as mod
 
 ## Note
 
-This script is designed to handle only one question and one answer at a time. The answer is in plain text format. It is designed for command line usage to get quick answer in terminal, not for a nice looking conversation with Perplexity AI.
+This script is designed to handle only one question and one answer at a time. The response is provided in plain text format, making it well-suited for quick answer in the terminal. It is not designed for a polished conversational experience, but rather for efficient command line usage with Perplexity AI.
 
 ---
 
