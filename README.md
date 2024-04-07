@@ -16,7 +16,7 @@
 ## Installation
 
 ```bash
-npm i playwright-chromium
+npm i playwright-chromium playwright-extra puppeteer-extra-plugin-stealth
 npx playwright install chromium
 ```
 

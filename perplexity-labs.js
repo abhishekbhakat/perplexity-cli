@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-const { chromium } = require('playwright-chromium');
+const { chromium } = require('playwright-extra');
+const stealth = require('puppeteer-extra-plugin-stealth')();
+chromium.use(stealth);
 
 const url = 'https://labs.perplexity.ai/';
 const searchText = process.argv[2];
@@ -10,7 +12,7 @@ const textArea = 'textarea[placeholder="Ask anything..."]';
 const buttonAskPerplexity = '.umami--click--ask_perplexity_redirect';
 const textMessage = '.prose';
 
-chromium.launch({ headless: false, timeout: 30000 }).then(async browser => {
+chromium.launch({ headless: true, timeout: 30000 }).then(async browser => {
   // start session
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'domcontentloaded' });
