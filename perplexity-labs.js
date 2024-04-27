@@ -6,7 +6,7 @@ chromium.use(stealth);
 
 const url = 'https://labs.perplexity.ai/';
 const searchText = process.argv[2];
-const llm = (process.argv[3] === undefined) ? 'sonar-medium-online' : process.argv[3];
+const llm = (process.argv[3] === undefined) ? 'llama-3-sonar-large-32k-online' : process.argv[3];
 const selectList = '#lamma-select';
 const textArea = 'textarea[placeholder="Ask anything..."]';
 const buttonAskPerplexity = '.umami--click--ask_perplexity_redirect';
