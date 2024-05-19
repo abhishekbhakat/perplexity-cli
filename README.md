@@ -13,6 +13,8 @@
 ## Dependency
 
 - [playwright-chromium](https://github.com/Microsoft/playwright)
+- [playwright-extra](https://github.com/berstend/puppeteer-extra)
+- [puppeteer-extra-plugin-stealth](https://github.com/berstend/puppeteer-extra/tree/master/packages/puppeteer-extra-plugin-stealth#readme)
 
 ## Installation
 
