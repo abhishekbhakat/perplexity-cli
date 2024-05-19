@@ -7,6 +7,7 @@
 - [Dependency](#dependency)
 - [Installation](#installation)
 - [How to use](#how-to-use)
+- [Want an alternative?](#want-an-alternative)
 - [Note](#note)
 
 ## Dependency
@@ -35,6 +36,10 @@ $ ./perplexity-labs.js "enter any text here"
 ```
 
 LLM `sonar-medium-online` is selected by default. Set the second argument as model name to select another model, for example: `./perplexity-labs.js "text" "codellama-70b-instruct"`.
+
+## Want an alternative?
+
+Check out [copilot-cli](https://github.com/KevCui/copilot-cli)
 
 ## Note
 
