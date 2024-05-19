@@ -10,6 +10,8 @@ const buttonMenu = 'button[data-testid="thread-dropdown-menu"]'; // "..." icon o
 const buttonDelete = 'div[data-testid="thread-delete"]'; // "Delete Thread" button
 const buttonConfirm = 'css=button:has-text("Confirm")'; 
 const textMessage = 'div[dir="auto"]';
+const totalLoopCount = 60;
+const printIntervalTime = 500;
 
 chromium.launch({ headless: true, timeout: 30000 }).then(async browser => {
   // start session
@@ -17,9 +19,16 @@ chromium.launch({ headless: true, timeout: 30000 }).then(async browser => {
   await page.goto(url, { waitUntil: 'domcontentloaded' });
 
   // get answer 
-  await page.waitForSelector(buttonCopy);
-  const result = await page.locator(textMessage).textContent();
-  console.log(result);
+  for (let i = 0; i < totalLoopCount; i++) {
+    await new Promise((resolve) => setTimeout(resolve, printIntervalTime));
+    const result = await page.locator(textMessage).textContent();
+    console.clear();
+    console.log('----------\n' + result);
+    if (await page.locator(buttonCopy).isVisible()
+      && i != (totalLoopCount - 1)){
+      i = (totalLoopCount - 1);
+    }
+  }
 
   // delete thread
   await page.click(buttonMenu, {focus: true});

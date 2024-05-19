@@ -11,6 +11,8 @@ const selectList = '#lamma-select';
 const textArea = 'textarea[placeholder="Ask anything..."]';
 const buttonAskPerplexity = '.umami--click--ask_perplexity_redirect';
 const textMessage = '.prose';
+const totalLoopCount = 60;
+const printIntervalTime = 500;
 
 chromium.launch({ headless: true, timeout: 30000 }).then(async browser => {
   // start session
@@ -26,9 +28,16 @@ chromium.launch({ headless: true, timeout: 30000 }).then(async browser => {
   await page.locator('button').last().click();
 
   // get answer
-  await page.waitForSelector(buttonAskPerplexity);
-  const result = await page.locator(textMessage).last().textContent();
-  console.log(result);
+  for (let i = 0; i < totalLoopCount; i++) {
+    await new Promise((resolve) => setTimeout(resolve, printIntervalTime));
+    const result = await page.locator(textMessage).last().textContent();
+    console.clear();
+    console.log('----------\n' + result);
+    if (await page.locator(buttonAskPerplexity).isVisible()
+      && i != (totalLoopCount - 1)){
+      i = (totalLoopCount - 1);
+    }
+  }
 
   // close browser
   await browser.close();
