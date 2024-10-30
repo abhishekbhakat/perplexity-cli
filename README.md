@@ -39,14 +39,7 @@ $ ./perplexity-labs.js "enter any text here"
 
 LLM `sonar-medium-online` is selected by default. Set the second argument as model name to select another model, for example: `./perplexity-labs.js "text" "codellama-70b-instruct"`.
 
-## Want an alternative?
-
-Check out [copilot-cli](https://github.com/KevCui/copilot-cli)
 
 ## Note
 
 This script is designed to handle only one question and one answer at a time. The response is provided in plain text format, making it well-suited for quick answer in the terminal. It is not designed for a polished conversational experience, but rather for efficient command line usage with Perplexity AI.
-
----
-
-<a href="https://www.buymeacoffee.com/kevcui" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="60px" width="217px"></a>
